@@ -1,1 +1,10 @@
 
+extends layouts/blog.jade
+
+include mixins/posts.jade
+
+block posts
+	- collection = []
+	- collection.push({title: 'Golden Dragon Review', author: 'Wolfgang Amadeus Mozart', date: 'Posted on January 21st, 2014 at 9:00 PM', image: 'images/golden-dragon.png', link: 'golden-dragon.html' })
+	- collection.push({title: 'Little Pizzeria Review', author: 'Ludwig Von Beethoven', date: 'Posted on January 18th, 2014 at 6:00 PM', image: 'images/little-pizzeria.png', link: 'little-pizzeria.html' })
+	mixin posts(collection)

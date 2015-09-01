@@ -1,1 +1,23 @@
+extends layouts/post.jade
+
+include mixins/comments.jade
+include mixins/popular.jade
+
+block title
+	| Golden Dragon Review
+block author
+	| Wolfgang Amadeus Mozart
+
+block date
+	| Posted on January 21st, 2014 at 9:00 PM
+
+block image
+	img.img-responsive(src='images/golden-dragon.png')
+
+block content
+	| You won't be disappointed.
+block popular
+	- collection = [];
+	- collection.push({ author: 'Ludwig Van Beethoven', date: '10:38 PM on January 21st, 2014', text: 'Thanks for the information!' });
+	mixins comments(collection)
 
