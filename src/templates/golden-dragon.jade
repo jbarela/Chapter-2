@@ -18,6 +18,11 @@ block content
 	| You won't be disappointed.
 block popular
 	- collection = [];
+	- collection.push({ link: 'little-pizzeria.html', text: 'Little Pizzeria' });
+	mixin popular(collection)
+
+block comments
+	- collection = [];
 	- collection.push({ author: 'Ludwig Van Beethoven', date: '10:38 PM on January 21st, 2014', text: 'Thanks for the information!' });
-	mixins comments(collection)
+	mixin comments(collection)
 

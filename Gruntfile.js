@@ -48,6 +48,16 @@ module.exports = function (grunt) {
         }
     };
 
+    config['cssmin'] = {
+        dist: {
+            files: {
+                'dist/styles/main.css': [
+                    'src/styles/{,*/}*.css'
+                ]
+            }
+        }
+    };
+
     config['watch'] = {
         options: {
             nospawn: true
@@ -97,7 +107,14 @@ module.exports = function (grunt) {
 
     grunt.initConfig(config);
 
-    var tasks = [];
+    var tasks = [
+        'clean',
+        'jade:dist',
+        'compass:dist',
+        'htmlmin:dist',
+        'copy',
+        'cssmin'
+    ];
 
     grunt.registerTask('build', tasks);
 };
